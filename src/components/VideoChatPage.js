@@ -174,32 +174,34 @@ class VideoChatPage extends Component {
         } = this.state;
 
         return (
-            <section className="section">
-                <div className="container">
-                    <h1>Video Chat Page</h1>
-                    <div>
-                        Room ID: { this._roomId }
+            <React.Fragment>
+                <section className="section">
+                    <div className="container">
+                        <h1>Video Chat Page</h1>
+                        <div>
+                            Room ID: { this._roomId }
+                        </div>
+                        <div>
+                            My Peer ID: { peerId }
+                            <video id="my-video"></video>
+                        </div>
+                        <div>
+                            To Peer ID: { toPeerId }
+                            <video id="to-video"></video>
+                        </div>
+                        <div>
+                            <button class="button" onClick={ event => this.onClickLeave(event) }>Leave from Room</button>
+                        </div>
+                        <div>
+                            <button onClick={ event => this.toggleVideoEnabled(event) }>Video ON/Off</button>
+                        </div>
+                        <div>
+                            <button onClick={ event => this.toggleAudioEnabled(event) }>Audio ON/Off</button>
+                        </div>
+                        
                     </div>
-                    <div>
-                        My Peer ID: { peerId }
-                        <video id="my-video"></video>
-                    </div>
-                    <div>
-                        To Peer ID: { toPeerId }
-                        <video id="to-video"></video>
-                    </div>
-                    <div>
-                        <button onClick={ event => this.onClickLeave(event) }>Leave from Room</button>
-                    </div>
-                    <div>
-                        <button onClick={ event => this.toggleVideoEnabled(event) }>Video ON/Off</button>
-                    </div>
-                    <div>
-                        <button onClick={ event => this.toggleAudioEnabled(event) }>Audio ON/Off</button>
-                    </div>
-                    
-                </div>
-            </section>
+                </section>
+            </React.Fragment>
         );
     }
 } 
